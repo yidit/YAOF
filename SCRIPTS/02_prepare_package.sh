@@ -107,6 +107,9 @@ sed -i 's,noinitrd,noinitrd mitigations=off,g' target/linux/x86/image/grub-pc.cf
 
 
 ### 获取额外的 LuCI 应用、主题和依赖 ###
+# urngd
+rm -rf ./package/system/urngd
+cp -rf ../lede/package/system/urngd ./package/system/urngd
 # netifd
 mkdir -p package/network/config/netifd/patches
 cp -f ../PATCH/netifd/100-system-linux-fix-autoneg-for-2.5G-5G-10G.patch ./package/network/config/netifd/patches/100-system-linux-fix-autoneg-for-2.5G-5G-10G.patch
